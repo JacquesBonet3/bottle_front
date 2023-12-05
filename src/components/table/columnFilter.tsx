@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { TextInput, Menu, ActionIcon, Stack, Group } from "@mantine/core";
 import { IconFilter, IconX, IconCheck } from "@tabler/icons";
+import {Column} from "@tanstack/react-table";
+import {producerTypeValue, valueTypeProducer} from "../producer-select/index.js";
+import {valueTypeWine, wineTypeValue} from "../wine-type-select/index.js";
 
-import { ColumnButtonProps } from "../../interfaces";
+
+export interface ColumnButtonProps {
+    column: Column<any, any>; // eslint-disable-line
+}
 
 export const ColumnFilter: React.FC<ColumnButtonProps> = ({ column }) => {
     // eslint-disable-next-line
@@ -29,7 +35,7 @@ export const ColumnFilter: React.FC<ColumnButtonProps> = ({ column }) => {
 
     const save = () => {
         if (!state) return;
-        column.setFilterValue(state.value);
+        column.setFilterValue( valueTypeWine(valueTypeProducer(state.value)));
         close();
     };
 
@@ -41,7 +47,8 @@ export const ColumnFilter: React.FC<ColumnButtonProps> = ({ column }) => {
             return (
                 <TextInput
                     autoComplete="off"
-                    value={state.value}
+                    value={column.columnDef.header === 'Type' ? wineTypeValue(state.value) :
+                        column.columnDef.header === 'Producer' ? producerTypeValue(state.value) : state.value}
                     onChange={(e) => change(e.target.value)}
                 />
             );

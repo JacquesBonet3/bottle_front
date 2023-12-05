@@ -14,6 +14,14 @@ export const ProducerSelect: React.FC<React.ComponentProps<typeof Select>> = (
   <Select {...props} value={`${props.value}`} label="Chateau" data={data} />
 )
 
-export const producerTypeValue = (value: number) => (
-    data.find( elem => elem.value === `${value}`)?.label
-)
+export const producerTypeValue = (value: number | string) => {
+  const found = data.find(elem => elem.value === `${value}`)
+
+  return found ? found.label : value
+}
+
+export const valueTypeProducer = (producer: string | number) => {
+  const found = data.find(elem => elem.label === producer)
+
+  return found ? found.value : producer
+}

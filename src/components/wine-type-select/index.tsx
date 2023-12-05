@@ -15,6 +15,14 @@ export const WineTypeSelect: React.FC<React.ComponentProps<typeof Select>> = (
 )
 
 
-export const wineTypeValue = (value: number) => (
-    data.find( elem => elem.value === `${value}`)?.label
-)
+export const wineTypeValue = (value: number | string) => {
+  const found = data.find(elem => elem.value === `${value}`)
+
+  return found ? found.label : value
+}
+
+export const valueTypeWine = (label: string | number) => {
+  const found = data.find(elem => elem.label === label)
+
+  return found ? found.value : label
+}

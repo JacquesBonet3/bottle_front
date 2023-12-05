@@ -1,7 +1,11 @@
 import { ActionIcon } from "@mantine/core";
 import { IconChevronDown, IconSelector, IconChevronUp } from "@tabler/icons";
+import {Column} from "@tanstack/react-table";
 
-import { ColumnButtonProps } from "../../interfaces";
+
+export interface ColumnButtonProps {
+    column: Column<any, any>; // eslint-disable-line
+}
 
 export const ColumnSorter: React.FC<ColumnButtonProps> = ({ column }) => {
     if (!column.getCanSort()) {

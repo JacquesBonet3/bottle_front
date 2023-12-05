@@ -1,11 +1,8 @@
-# whoof-web
+# bottle_front
 
-<div align="center" style="margin: 30px;">
-    <a href="https://refine.dev">
-    <img src="https://refine.ams3.cdn.digitaloceanspaces.com/refine_logo.png"  align="center" />
-    </a>
-</div>
-<br/>
+
+
+This project use refine
 
 This [refine](https://github.com/refinedev/refine) project was generated with [superplate](https://github.com/pankod/superplate).
 
@@ -18,26 +15,50 @@ Refine offers lots of out-of-the box functionality for rapid development, withou
 ## Available Scripts
 
 ```bash
-    pnpm install
+    npm install
 ```
 
 ### Running the development server.
 
 ```bash
-    pnpm dev
+    npm run dev
 ```
 
 ### Building for production.
 
 ```bash
-    pnpm build
+    npm run build
 ```
 
 ### Running the production server.
 
 ```bash
-    pnpm start
+    npm start
 ```
+
+## The application
+
+The application need to modify energie_win_back_main to authorize CORS
+
+
+## Problems
+
+### Delete bottle
+
+We have the following error on the back end:
+
+ERROR [ExceptionsHandler] update or delete on table "bottle" violates foreign key constraint "bottle_price_history" on table "bottle_price_history"
+
+The REST interface don't provide a endpoint to delete row in the bottle_price_history history.
+DELETE actions are only possible on /bottles/{id} et /notes/{id}.
+
+### Filters
+
+Filter is very basic. 
+
+### Refresh 
+
+There is a problem on explicit application refresh
 
 ## Learn More
 
