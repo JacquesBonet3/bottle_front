@@ -60,6 +60,11 @@ Filter is very basic.
 
 There is a problem on explicit application refresh
 
+## Access token
+
+Access token expiration has not been tested
+
+
 ## Learn More
 
 To learn more about **refine**, please check out the [Documentation](https://refine.dev/docs)
@@ -68,7 +73,7 @@ To learn more about **refine**, please check out the [Documentation](https://ref
 - **Mantine** [Docs](#)
 - **Inferencer** [Docs](https://refine.dev/docs/packages/documentation/inferencer)
 - **React Router** [Docs](https://refine.dev/docs/core/providers/router-provider/)
-- **Auth0 Auth Providder** [Docs](https://refine.dev/docs/guides-and-concepts/auth/auth0/)
+
 
 ## License
 
